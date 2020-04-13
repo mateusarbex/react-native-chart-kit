@@ -38,6 +38,7 @@ class ProgressChart extends AbstractChart<
   public static defaultProps = { style: {}, strokeWidth: 16, radius: 32 };
 
   render() {
+<<<<<<< HEAD:src/ProgressChart.tsx
     let {
       width,
       height,
@@ -48,6 +49,9 @@ class ProgressChart extends AbstractChart<
       radius
     } = this.props;
 
+=======
+    const { width, height, style = {}, data, hideLegend, strokeWidth = 16, radius = 32 } = this.props;
+>>>>>>> added strokeWidth & radius as params:src/progress-chart.js
     const { borderRadius = 0, margin = 0, marginRight = 0 } = style;
 
     if (Array.isArray(data)) {
@@ -57,12 +61,16 @@ class ProgressChart extends AbstractChart<
     }
 
     const pies = data.data.map((pieData, i) => {
+<<<<<<< HEAD:src/ProgressChart.tsx
       const r =
         ((height / 2 - 32) /
           (Array.isArray(data) ? data.length : data.data.length)) *
           i +
         radius;
 
+=======
+      const r = ((height / 2 - 32) / data.data.length) * i + radius;
+>>>>>>> added strokeWidth & radius as params:src/progress-chart.js
       return Pie({
         r,
         R: r,
@@ -75,11 +83,15 @@ class ProgressChart extends AbstractChart<
     });
 
     const pieBackgrounds = data.data.map((pieData, i) => {
+<<<<<<< HEAD:src/ProgressChart.tsx
       const r =
         ((height / 2 - 32) /
           (Array.isArray(data) ? data.length : data.data.length)) *
           i +
         radius;
+=======
+      const r = ((height / 2 - 32) / data.data.length) * i + radius;
+>>>>>>> added strokeWidth & radius as params:src/progress-chart.js
       return Pie({
         r,
         R: r,
