@@ -201,4 +201,10 @@ class ProgressChart extends AbstractChart<
   }
 }
 
+ProgressChart.defaultProps = {
+  style: {},
+  strokeWidth: 16,
+  radius: 32
+};
+
 export default ProgressChart;
