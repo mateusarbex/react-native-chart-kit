@@ -171,7 +171,7 @@ class ProgressChart extends AbstractChart<
                     key={Math.random()}
                     d={pie.curves[0].sector.path.print()}
                     strokeWidth={strokeWidth}
-                    stroke={this.props.chartConfig.color(0.2, i)}
+                    stroke={this.props.chartConfig.pathColor(0.2, i)}
                   />
                 );
               })}
