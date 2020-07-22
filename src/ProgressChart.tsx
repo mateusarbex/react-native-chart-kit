@@ -38,20 +38,15 @@ class ProgressChart extends AbstractChart<
   public static defaultProps = { style: {}, strokeWidth: 16, radius: 32 };
 
   render() {
-<<<<<<< HEAD:src/ProgressChart.tsx
-    let {
+    const {
       width,
       height,
-      style,
+      style = {},
       data,
       hideLegend,
-      strokeWidth,
-      radius
+      strokeWidth = 16,
+      radius = 32
     } = this.props;
-
-=======
-    const { width, height, style = {}, data, hideLegend, strokeWidth = 16, radius = 32 } = this.props;
->>>>>>> added strokeWidth & radius as params:src/progress-chart.js
     const { borderRadius = 0, margin = 0, marginRight = 0 } = style;
 
     if (Array.isArray(data)) {
@@ -101,7 +96,7 @@ class ProgressChart extends AbstractChart<
                 fill={this.props.chartConfig.color(0.2 * (i + 1), i)}
                 rx={8}
                 ry={8}
-                x={this.props.width / 2.5 - 24}
+                x={this.props.width / 2 - 24}
                 y={
                   -(this.props.height / 2.5) +
                   ((this.props.height * 0.8) /
@@ -165,7 +160,10 @@ class ProgressChart extends AbstractChart<
             ry={borderRadius}
             fill="url(#backgroundGradient)"
           />
-          <G x={this.props.width / (hideLegend ? 2 : 2.5)} y={this.props.height / 2}>
+          <G
+            x={this.props.width / (hideLegend ? 2 : 2.5)}
+            y={this.props.height / 2}
+          >
             <G>
               {pieBackgrounds.map((pie, i) => {
                 return (
