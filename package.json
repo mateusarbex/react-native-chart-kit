@@ -41,7 +41,7 @@
     "test": "jest",
     "build": "tsc",
     "dev": "tsc --watch",
-    "postinstall": "yarn build"
+    "precommit": "yarn build"
   },
   "jest": {
     "preset": "jest-expo"
